@@ -23,3 +23,6 @@ https://developers.arcgis.com/javascript/latest/api-reference/esri-symbols-TextS
 
 [ArcGIS Lableing Reference]
 https://developers.arcgis.com/javascript/latest/guide/labeling/index.html
+
+[ArcGIS Tool]
+https://www.esri.com/zh-tw/arcgis/products/arcgis-online/overview
