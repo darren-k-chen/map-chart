@@ -21,8 +21,8 @@ var view = new MapView({
 	zoom: 8
 });
 
-alert("TEST");
-var url = "https://api.jsonbin.io/b/5e9023938e85c8437013a1de"; // "https://api.jsonbin.io/b/5e902ccf8e85c8437013a53a";
+// alert("TEST");
+var url = "https://darren-k-chen.github.io/map-chart/CountyAmountGeoJson/CountyAmountGeoJson.json"// "https://api.jsonbin.io/b/5e9023938e85c8437013a1de"; // "https://api.jsonbin.io/b/5e902ccf8e85c8437013a53a";
 const layer = new GeoJSONLayer({
    url: url, // "https://api.jsonbin.io/b/5e9023938e85c8437013a1de",
    copyright: "Darren K.J. Chen",

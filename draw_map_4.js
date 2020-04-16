@@ -22,10 +22,10 @@ var view = new MapView({
 });
 
 alert("TEST");
-var url = "D:/kjchen/Projects/map-chart/CountyAmountGeoJson/CountyAmount.csv"; // "https://api.jsonbin.io/b/5e902ccf8e85c8437013a53a";
-const layer = new CSVLayer({
+var url = "https://darren-k-chen.github.io/map-chart/CountyAmountGeoJson/CountyAmount.csv"; // "https://api.jsonbin.io/b/5e902ccf8e85c8437013a53a";
+var layer = new CSVLayer({
    url: url, // "https://api.jsonbin.io/b/5e9023938e85c8437013a1de",
-   copyright: "Darren K.J. Chen",
+   copyright: "Darren K.J. Chen"
 });
 map.add(layer);  // Adds the layer to the map
 alert("TEST");
