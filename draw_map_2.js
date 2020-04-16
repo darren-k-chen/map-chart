@@ -22,7 +22,7 @@ var view = new MapView({
 });
 
 alert("TEST");
-var url = "https://api.jsonbin.io/b/5e9023938e85c8437013a1de"; // "https://api.jsonbin.io/b/5e902ccf8e85c8437013a53a";
+var url = "https://services5.arcgis.com/sh1jQ9KfyLjkJ9XX/arcgis/rest/services/countyamountgeojson/FeatureServer/0?token=5XZVgR_SKO7Nen2Uj4a1zyRtbUbhYJ9tzQ1scM-m7T-Jw5ZUUWLHti-hNQ9ycIt_XAcHrYFXYR-LXDysiMBKFMTyE8Y2zZSbQ0mp6BmjJhx9fmYnrpjLzQYYzjrF8Dc3aZZaxGA5V9gjpczlY1_gkZmoXLkDWIn8STyC4vAkiDRbcUT8Nuxb1e0oNInKtfS8kox7EXjcij1AJfn7ZMAD-RPL3-yuKFwC8d_fp8dt8K8."; // "https://api.jsonbin.io/b/5e902ccf8e85c8437013a53a";
 const layer = new FeatureLayer({
    url: url, // "https://api.jsonbin.io/b/5e9023938e85c8437013a1de",
    copyright: "Darren K.J. Chen",
