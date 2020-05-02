@@ -26,3 +26,5 @@ https://developers.arcgis.com/javascript/latest/guide/labeling/index.html
 
 [ArcGIS Tool]
 https://www.esri.com/zh-tw/arcgis/products/arcgis-online/overview
+
+https://developers.arcgis.com/javascript/latest/api-reference/esri-WebMap.html
