@@ -11,7 +11,7 @@ require([
         }
     });
 
-    var view = new MapView( {
+    var view = new MapView({
         container: "viewDiv",
 		map: webmap
     });
