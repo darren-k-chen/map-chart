@@ -1,72 +1,68 @@
 // Author: Darren K.J. Chen
+
 // Ref. Doc. 1 >> https://developers.arcgis.com/javascript/latest/api-reference/esri-symbols-SimpleFillSymbol.html
 // Ref. Doc. 2 >> https://developers.arcgis.com/javascript/latest/api-reference/esri-renderers-visualVariables-VisualVariable.html
 // Ref. Doc. 3 >> https://developers.arcgis.com/javascript/latest/api-reference/esri-renderers-visualVariables-ColorVariable.html
 
-// alert("Test-A");
-
 require([
     "esri/Map",
     "esri/layers/GeoJSONLayer",
-	// "esri/widgets/Legend",
-    "esri/views/MapView"
-], function(Map, GeoJSONLayer, MapView/*, Legend*/) {
-	// alert("T1");
+    "esri/views/MapView",
+	"esri/widgets/Legend"
+], function(Map, GeoJSONLayer, MapView, Legend) {
+
 	const template = {
-        title: "{COUNTYNAME}",
-		content: "Amt = {displayAmt}"
+        title: popup_title,
+		content: popup_content
     };
 
-	// alert("T2");
 	const renderer = {
         type: "simple",
-        field: "COUNTYNAME",
-		label: "Taiwan ( R.O.C. )",
+        field: graphic_field,
+		label: legend_label,
         symbol: {
             type: "simple-fill",
 			style: "solid",
             outline: {
-                color: "white",
+                color: outline_color,
 				width: "0.5px"
             }
         },
         visualVariables: [
         {
             type: "color",
-            field: "displayAmt",
-			// normalizationField: 1000000,
+            field: graphic_field,
+			// normalizationField: "<if_use_percent>",
 			legendOptions: {
-				title: "Display Amt."
+				title: legend_standard_title
 			},
             stops: [
             {
-                value: 1,
-				label: "0",
-                color: "#ffffcc"
+                value: min_value,
+				label: legend_min_lable,
+                color: min_color
             },
 			{
-                value: 1000,
-				label: "3000000",
-                color: "#a1dab4"
+                value: max_value,
+				label: legend_max_lable,
+                color: max_color
             }]
         }]
     };
 
-	// alert("T3");
 	const layer = new GeoJSONLayer({
         url: json_url,
         popupTemplate: template,
+		title: legend_title,
         renderer: renderer, //optional
-		copyright: "TaiwanMap"
+		copyright: cp_right
     });
 
-	// alert("T4");
 	var map = new Map({
 		basemap: "topo-vector",
 		layers: [layer]
 	});
 
-	// alert("T5");
 	var view = new MapView({
 		container: "viewDiv",
 		map: map,
@@ -74,18 +70,12 @@ require([
 		zoom: 8
 	});
 
-	// alert("T6");
-	map.add(layer);
-
-	// alert("T7");
 	view.ui.add(
-        new Legend( {
+        new Legend({
             view: view
         }),
         "top-right"
     );
 
-	// alert("T8");
+	// map.add(layer);
 });
-
-// alert("Test-B");
